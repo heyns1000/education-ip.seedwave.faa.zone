@@ -1,11 +1,13 @@
 import React from 'react';
 import { 
   LayoutDashboard, 
-  Thermometer, 
-  Pill, 
-  TrendingUp, 
-  BookOpen,
-  Settings
+  BookOpen, 
+  FileText, 
+  BarChart3, 
+  Calendar,
+  MessageSquare,
+  Settings,
+  Users
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -15,10 +17,12 @@ interface SidebarProps {
 
 const menuItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { id: 'symptoms', label: 'Symptoms', icon: Thermometer },
-  { id: 'medications', label: 'Medications', icon: Pill },
-  { id: 'peakflow', label: 'Peak Flow', icon: TrendingUp },
-  { id: 'education', label: 'Education', icon: BookOpen },
+  { id: 'courses', label: 'My Courses', icon: BookOpen },
+  { id: 'assignments', label: 'Assignments', icon: FileText },
+  { id: 'grades', label: 'Grades', icon: BarChart3 },
+  { id: 'calendar', label: 'Calendar', icon: Calendar },
+  { id: 'discussions', label: 'Discussions', icon: MessageSquare },
+  { id: 'classmates', label: 'Classmates', icon: Users },
   { id: 'settings', label: 'Settings', icon: Settings },
 ];
 
@@ -37,7 +41,7 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
                   onClick={() => onViewChange(item.id)}
                   className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${
                     isActive
-                      ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                      ? 'bg-indigo-50 text-indigo-700 border border-indigo-200'
                       : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                   }`}
                 >

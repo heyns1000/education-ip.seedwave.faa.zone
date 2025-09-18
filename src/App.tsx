@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Layout } from './components/Layout';
 import { Dashboard } from './components/Dashboard';
-import { Symptoms } from './components/Symptoms';
-import { Medications } from './components/Medications';
-import { PeakFlow } from './components/PeakFlow';
-import { Education } from './components/Education';
+import { Courses } from './components/Courses';
+import { Assignments } from './components/Assignments';
+import { Grades } from './components/Grades';
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -13,14 +12,20 @@ function App() {
     switch (currentView) {
       case 'dashboard':
         return <Dashboard />;
-      case 'symptoms':
-        return <Symptoms />;
-      case 'medications':
-        return <Medications />;
-      case 'peakflow':
-        return <PeakFlow />;
-      case 'education':
-        return <Education />;
+      case 'courses':
+        return <Courses />;
+      case 'assignments':
+        return <Assignments />;
+      case 'grades':
+        return <Grades />;
+      case 'calendar':
+        return <div className="p-6 bg-white rounded-lg">Calendar feature coming soon...</div>;
+      case 'discussions':
+        return <div className="p-6 bg-white rounded-lg">Discussions feature coming soon...</div>;
+      case 'classmates':
+        return <div className="p-6 bg-white rounded-lg">Classmates feature coming soon...</div>;
+      case 'settings':
+        return <div className="p-6 bg-white rounded-lg">Settings feature coming soon...</div>;
       default:
         return <Dashboard />;
     }
